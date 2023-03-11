@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+
+#heading::selection{
+  color: red;
+  background-color: pink;
+}
+
+#textBox{
+  border: 1px solid red;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#voiceInput{
+  /* display: inline; */
+  width: 50%;
+  color: red;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 2px;
+  outline: none;
+  padding: 8px;
+}
+.speak-label{
+  font-weight: bold;
+}
+
+.container{
+  border-radius: 8px;
+}
+
+#textBox::placeholder{
+  color: grey;
+  font-size: 1.2rem;
+}
+
+.dark-mode-btn-container button{
+  border: 0px;
+
+}
+#blackShade{
+  background-color: #222528;
+}
+#purpleShade{
+  background-color: #6f42c1;
+}
+#greenShade{
+  background-color: #01B636;
+}
