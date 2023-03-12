@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 
 export default function TextForm(props) {
     const [text , setText] = useState("");
-    const [voice , setVoice] = useState(1);
+    const [voice , setVoice] = useState(10);
 
     let textareaStyle = {
         backgroundColor : props.mode === 'dark'?"#222528":"white",
@@ -25,17 +25,17 @@ export default function TextForm(props) {
     }
 
     const speak = () => {
-        console.log('first')
+        //console.log('first')
         let msg = new SpeechSynthesisUtterance();
         let voices = window.speechSynthesis.getVoices();
         msg.voice = voices[voice];
         msg.text = text;
         window.speechSynthesis.speak(msg);
-        console.log('end')
+        //console.log('end')
       }
 
     const updateVoice = (event) =>{
-        console.log(event.target);
+        //console.log(event.target);
         setVoice(event.target.value)
     }
     
@@ -80,7 +80,7 @@ export default function TextForm(props) {
 
             <div className="container" style={props.modeStyle}>
                 <h2>Your Text Summary</h2>
-                <p>{text.split(" ").length} words and {text.length} characters</p>
+                <p>{text.split(" ").filter((element) =>{return element.length != 0}).length} words and {text.length} characters</p>
                 <p>{0.008 * text.split(" ").length} Minutes read</p>
                 <h3>Preview</h3>
                 <p>{text}</p>
